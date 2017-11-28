@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+@SuppressWarnings("ALL")
 class Server6 extends JFrame {
 
     private JTextField userText;
@@ -33,7 +34,7 @@ class Server6 extends JFrame {
         setVisible(true);
     }
 
-    @SuppressWarnings("InfiniteLoopStatement")
+
     void startRunning(){
         try{
             server = new ServerSocket(6789, 100); //6789 is a dummy port for testing, this can be changed. The 100 is the maximum people waiting to connect.
