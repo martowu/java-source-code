@@ -33,18 +33,19 @@ class Server6 extends JFrame {
         setVisible(true);
     }
 
+    @SuppressWarnings("InfiniteLoopStatement")
     void startRunning(){
         try{
             server = new ServerSocket(6789, 100); //6789 is a dummy port for testing, this can be changed. The 100 is the maximum people waiting to connect.
-            while(true){
-                try{
+            while(true) {
+                try {
                     //Trying to connect and have conversation
                     waitForConnection();
                     setupStreams();
                     whileChatting();
-                }catch(EOFException eofException){
+                } catch (EOFException eofException) {
                     showMessage("\n Server ended the connection! ");
-                } finally{
+                } finally {
                     closeConnection(); //Changed the name to something more appropriate
                 }
             }
